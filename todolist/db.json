@@ -1,0 +1,10 @@
+{
+  "todolist": [
+    {
+      "id": "24c9",
+      "todo": "123123",
+      "done": false
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

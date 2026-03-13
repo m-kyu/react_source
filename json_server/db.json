@@ -1,0 +1,17 @@
+{
+  "works": [
+    {
+      "id": "0",
+      "name": "홍길동"
+    },
+    {
+      "id": "1",
+      "name": "동길홍"
+    },
+    {
+      "name": "안정환",
+      "id": "f66a"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
