@@ -1,9 +1,14 @@
 {
   "todolist": [
     {
-      "id": "24c9",
-      "todo": "123123",
-      "done": false
+      "todo": "ㅂ23123234",
+      "done": false,
+      "id": "24c9"
+    },
+    {
+      "todo": "12ㅁㄴㅇ",
+      "done": false,
+      "id": "3fa9"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
