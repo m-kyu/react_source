@@ -7,7 +7,7 @@ import bankStore from './store/bankStore';
 
 function App() {
   const [type,setType] = useState('입금');
-  const [isPOP, setIsPOP] = useState(false);
+  const [isPOP, setIsPOP] = useState('');
   const {total} = bankStore();
 
   function openPop(t){
@@ -35,9 +35,9 @@ function App() {
       <BankList />
       <BankInsert type={type} popState={[isPOP,setIsPOP]}/>
       
-
     </div>
   );
 }
 
 export default App;
+

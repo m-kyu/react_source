@@ -6,6 +6,7 @@ function BankInsert({type,popState}) {
 
     const {save} = bankStore();
 
+
     function handleSubmit(e){
         e.preventDefault();
         const today = new Date();
@@ -30,13 +31,14 @@ function BankInsert({type,popState}) {
         formData.append('id',Date.now())
         
         const resultValue = Object.fromEntries(formData.entries()); 
-        e.target.reset();
         popState[1](false);
-        save(resultValue)
+        
+        save(resultValue);
+        e.target.reset();
     }
     
   return (
-    <div className={`popup ${popState[0]?'active':''}`}
+    <div className={`insert ${popState[0]?'active':''}`}
         onClick={(e)=>{
             e.target.classList.contains('insert') && popState[1](false)
         }}
@@ -61,3 +63,14 @@ function BankInsert({type,popState}) {
 }
 
 export default BankInsert
+
+
+/* 
+  class Object = {
+    data:100,
+    fromEntries:function(){  }
+  }
+
+  let a = new Object();
+  a.fromEntries() 
+*/

@@ -8,9 +8,11 @@ const bankStore = create((set) => ({
         let total;
         if(value.type==='입금'){total = item.total + Number(value.amount)}
         else{total = item.total - Number(value.amount)}
+
         return {data:[...item.data, value], total}
     });
   }
 }))
 
 export default bankStore;
+
