@@ -1,4 +1,4 @@
-//db_todolist
+//db_todolist.js
 //const uri = "mongodb+srv://minkyu:test123456789@minkyu.rlol7cf.mongodb.net/?appName=minkyu";
 
 const  { MongoClient }  =  require ( 'mongodb' ) ; 
@@ -7,9 +7,14 @@ const  client  =  new  MongoClient ( uri ) ;
 
 let db;
 async function connectDB(){
-    await client.connect(); //몽고접속
-    db = client.db('test_project');  //프로젝트db 활성화
-    console.log('접속완료');
+    try{
+        await client.connect(); //몽고접속
+        db = client.db('todolist');  //프로젝트db 활성화
+        console.log('접속완료');
+    }
+    catch(err){
+        console.error(err)
+    }
 }
 
 function getDB(){

@@ -1,17 +1,15 @@
 import './App.css';
-import axios from 'axios'
+import TodoHead from './comp/TodoHead';
+import TodoInsert from './comp/TodoInsert';
+import TodoList from './comp/TodoList';
 
 function App() {
 
-  axios.get('http://localhost:4000/todo')
-  .then(res=>{
-    console.log(res.data);
-  });
-
-
   return (
     <div className="App">
-      
+      <TodoHead/>
+      <TodoList/>
+      <TodoInsert/>
     </div>
   );
 }
