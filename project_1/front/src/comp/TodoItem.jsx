@@ -1,12 +1,15 @@
 import React from 'react'
+import todoStore from '../Store/TodoStore'
 
-function TodoItem() {
+function TodoItem({item}) {
+  const {del,completeTodo} = todoStore();
+
   return (
-    <li>
-        투두리스트 만들기
+    <li style={{color:item.isdone && 'red'}}>
+        {item.content}
         <button>수정</button>
-        <button>삭제</button>
-        <button>완료</button>
+        <button onClick={()=>del(item._id)}>삭제</button>
+        <button onClick={()=>completeTodo(item._id)}>완료</button>
     </li>
   )
 }

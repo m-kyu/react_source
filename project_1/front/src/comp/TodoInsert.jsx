@@ -2,9 +2,9 @@ import React, { useState } from 'react'
 import todoStore from '../Store/TodoStore';
 
 function TodoInsert() {
-  const {save} = todoStore();
-  
+  const {save} = todoStore();  
   const [ip,setIp] = useState('');
+
   function handleSubmit(e){
     e.preventDefault();
 
@@ -23,8 +23,11 @@ function TodoInsert() {
         second:'2-digit'
     }).format(today).replace(/[가-힣]+/,'T').replaceAll(' ','');
 
-    save( {content:ip, date} );
-   
+    save( {content:ip, date, isdone:false} )
+    .then(()=>{
+      setIp('');
+      alert('저장완료!');
+    })
 
   }
 
